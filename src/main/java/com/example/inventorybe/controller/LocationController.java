@@ -3,6 +3,7 @@ package com.example.inventorybe.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +20,8 @@ import com.example.inventorybe.service.LocationService;
 @RequestMapping("/api/v1/location")
 public class LocationController {
 
-	private final LocationService locationService;
-
-	public LocationController(LocationService locationService) {
-		super();
-		this.locationService = locationService;
-	}
+	@Autowired
+	private LocationService locationService;
 	
 	@GetMapping
 	public List<LocationEntity> findAllLocation(){

@@ -3,6 +3,7 @@ package com.example.inventorybe.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +20,8 @@ import com.example.inventorybe.service.CategoryService;
 @RequestMapping("/api/v1/category")
 public class CategoryController {
 
-	private final CategoryService categoryService;
-
-	public CategoryController(CategoryService categoryService) {
-		super();
-		this.categoryService = categoryService;
-	}
+	@Autowired
+	private CategoryService categoryService;
 	
 	@GetMapping
 	public List<CategoryEntity> findAllCategory(){

@@ -3,6 +3,7 @@ package com.example.inventorybe.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +20,8 @@ import com.example.inventorybe.service.ItemUnitOfMeasureService;
 @RequestMapping("/api/v1/item_unit_of_measure")
 public class ItemUnitOfMeasureController {
 
-	private final ItemUnitOfMeasureService itemUnitOfMeasureService;
-
-	public ItemUnitOfMeasureController(ItemUnitOfMeasureService itemUnitOfMeasureService) {
-		super();
-		this.itemUnitOfMeasureService = itemUnitOfMeasureService;
-	}
+	@Autowired
+	private ItemUnitOfMeasureService itemUnitOfMeasureService;
 	
 	@GetMapping
 	public List<ItemUnitOfMeasureEntity> findAllItemUnitOfMeasure(){
