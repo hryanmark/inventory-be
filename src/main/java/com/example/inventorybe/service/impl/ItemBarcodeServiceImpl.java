@@ -3,6 +3,7 @@ package com.example.inventorybe.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.inventorybe.model.ItemBarcodeEntity;
@@ -12,12 +13,8 @@ import com.example.inventorybe.service.ItemBarcodeService;
 @Service
 public class ItemBarcodeServiceImpl implements ItemBarcodeService{
 	
-	private final ItemBarcodeRepository itemBarcodeRepository;
-	
-	public ItemBarcodeServiceImpl(ItemBarcodeRepository itemBarcodeRepository) {
-		super();
-		this.itemBarcodeRepository = itemBarcodeRepository;
-	}
+	@Autowired
+	private ItemBarcodeRepository itemBarcodeRepository;
 
 	@Override
 	public List<ItemBarcodeEntity> findAllBarcode() {

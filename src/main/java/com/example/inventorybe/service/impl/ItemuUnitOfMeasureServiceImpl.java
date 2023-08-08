@@ -3,6 +3,7 @@ package com.example.inventorybe.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.inventorybe.model.ItemUnitOfMeasureEntity;
@@ -12,12 +13,8 @@ import com.example.inventorybe.service.ItemUnitOfMeasureService;
 @Service
 public class ItemuUnitOfMeasureServiceImpl implements ItemUnitOfMeasureService{
 	
-	private final ItemUnitOfMeasureRepository itemUnitOfMeasureRepository;
-	
-	public ItemuUnitOfMeasureServiceImpl(ItemUnitOfMeasureRepository itemUnitOfMeasureRepository) {
-		super();
-		this.itemUnitOfMeasureRepository = itemUnitOfMeasureRepository;
-	}
+	@Autowired
+	private ItemUnitOfMeasureRepository itemUnitOfMeasureRepository;
 
 	@Override
 	public List<ItemUnitOfMeasureEntity> findAllItemUnitOfMeasure() {

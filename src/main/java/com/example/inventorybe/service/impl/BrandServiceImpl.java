@@ -3,6 +3,7 @@ package com.example.inventorybe.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.inventorybe.model.BrandEntity;
@@ -12,12 +13,8 @@ import com.example.inventorybe.service.BrandService;
 @Service
 public class BrandServiceImpl implements BrandService{
 
-	private final BrandRepository brandRepository;
-	
-	public BrandServiceImpl(BrandRepository brandRepository) {
-		super();
-		this.brandRepository = brandRepository;
-	}
+	@Autowired
+	private BrandRepository brandRepository;
 
 	@Override
 	public List<BrandEntity> findAllBrands() {

@@ -3,6 +3,7 @@ package com.example.inventorybe.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.inventorybe.model.ItemEntity;
@@ -12,13 +13,9 @@ import com.example.inventorybe.service.ItemService;
 @Service
 public class ItemServiceImpl implements ItemService{
 
-	private final ItemRepository itemRepository;
+	@Autowired
+	private ItemRepository itemRepository;
 	
-	public ItemServiceImpl(ItemRepository itemRepository) {
-		super();
-		this.itemRepository = itemRepository;
-	}
-
 	@Override
 	public List<ItemEntity> findAllItems() {
 		// TODO Auto-generated method stub
