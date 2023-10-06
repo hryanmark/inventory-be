@@ -20,7 +20,7 @@ public class UserEntity {
 	
 	private String name;
 	
-	private Long contact_info;
+	private Long contact_no;
 	
 	private String email;
 	
@@ -32,26 +32,26 @@ public class UserEntity {
 		super();
 	}
 
-	public UserEntity(String username, String password, String name, Long contact_info, String email, Integer status,
-			String role) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.name = name;
-		this.contact_info = contact_info;
-		this.email = email;
-		this.status = status;
-		this.role = role;
-	}
-
-	public UserEntity(Long id, String username, String password, String name, Long contact_info, String email,
+	public UserEntity(Long id, String username, String password, String name, Long contact_no, String email,
 			Integer status, String role) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.name = name;
-		this.contact_info = contact_info;
+		this.contact_no = contact_no;
+		this.email = email;
+		this.status = status;
+		this.role = role;
+	}
+
+	public UserEntity(String username, String password, String name, Long contact_no, String email, Integer status,
+			String role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.name = name;
+		this.contact_no = contact_no;
 		this.email = email;
 		this.status = status;
 		this.role = role;
@@ -89,12 +89,12 @@ public class UserEntity {
 		this.name = name;
 	}
 
-	public Long getContact_info() {
-		return contact_info;
+	public Long getContact_no() {
+		return contact_no;
 	}
 
-	public void setContact_info(Long contact_info) {
-		this.contact_info = contact_info;
+	public void setContact_no(Long contact_no) {
+		this.contact_no = contact_no;
 	}
 
 	public String getEmail() {
@@ -124,7 +124,9 @@ public class UserEntity {
 	@Override
 	public String toString() {
 		return "UserEntity [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name
-				+ ", contact_info=" + contact_info + ", email=" + email + ", status=" + status + ", role=" + role + "]";
+				+ ", contact_no=" + contact_no + ", email=" + email + ", status=" + status + ", role=" + role + "]";
 	}
+
+	
 	
 }
