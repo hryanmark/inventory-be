@@ -81,6 +81,29 @@ public class ItemEntity {
 		this.updated_at = updated_at;
 	}
 
+	public ItemEntity(BigInteger brand_id, BigInteger category_id, String title, String description, String sKU,
+			BigInteger base_uom, BigInteger sales_uom, BigInteger puchase_uom, Double unit_cost,
+			Integer minimum_stock_level, Integer maximum_stock_level, Integer status, String created_by,
+			String updated_by, LocalDateTime created_at, LocalDateTime updated_at) {
+		super();
+		this.brand_id = brand_id;
+		this.category_id = category_id;
+		this.title = title;
+		this.description = description;
+		SKU = sKU;
+		this.base_uom = base_uom;
+		this.sales_uom = sales_uom;
+		this.puchase_uom = puchase_uom;
+		this.unit_cost = unit_cost;
+		this.minimum_stock_level = minimum_stock_level;
+		this.maximum_stock_level = maximum_stock_level;
+		this.status = status;
+		this.created_by = created_by;
+		this.updated_by = updated_by;
+		this.created_at = created_at;
+		this.updated_at = updated_at;
+	}
+
 	public Long getId() {
 		return id;
 	}
