@@ -15,25 +15,21 @@ public class TmpItemEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private BigInteger item_id;
-	
+
 	private BigInteger user_id;
 
 	public TmpItemEntity() {
 		super();
 	}
 
-	public TmpItemEntity(Long id, BigInteger item_id, BigInteger user_id) {
+	public TmpItemEntity(BigInteger user_id) {
 		super();
-		this.id = id;
-		this.item_id = item_id;
 		this.user_id = user_id;
 	}
 
-	public TmpItemEntity(BigInteger item_id, BigInteger user_id) {
+	public TmpItemEntity(Long id, BigInteger user_id) {
 		super();
-		this.item_id = item_id;
+		this.id = id;
 		this.user_id = user_id;
 	}
 
@@ -43,14 +39,6 @@ public class TmpItemEntity {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public BigInteger getItem_id() {
-		return item_id;
-	}
-
-	public void setItem_id(BigInteger item_id) {
-		this.item_id = item_id;
 	}
 
 	public BigInteger getUser_id() {
@@ -63,7 +51,7 @@ public class TmpItemEntity {
 
 	@Override
 	public String toString() {
-		return "TmpItemEntity [id=" + id + ", item_id=" + item_id + ", user_id=" + user_id + "]";
+		return "TmpItemEntity [id=" + id + ", user_id=" + user_id + "]";
 	}
-	
+
 }
