@@ -35,6 +35,11 @@ public class ItemUnitOfMeasureController {
 		return itemUnitOfMeasureService.findItemUnitOfMeasureById(id);
 	}
 	
+	@GetMapping("/{item_id}")
+	public Optional<ItemUnitOfMeasureEntity> findItemUnitOfMeasureByItemId(@PathVariable("item_id") Integer item_id) {
+		return itemUnitOfMeasureService.findItemUnitOfMeasureByItemId(item_id);
+	}
+	
 	@PutMapping
 	public ItemUnitOfMeasureEntity updateItemUnitOfMeasure(@RequestBody ItemUnitOfMeasureEntity itemUnitOfMeasureEntity) {
 		return itemUnitOfMeasureService.updateItemUnitOfMeasure(itemUnitOfMeasureEntity);

@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class ItemEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private BigInteger brand_id;

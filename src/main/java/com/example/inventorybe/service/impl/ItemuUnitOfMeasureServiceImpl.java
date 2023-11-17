@@ -29,6 +29,12 @@ public class ItemuUnitOfMeasureServiceImpl implements ItemUnitOfMeasureService{
 	}
 
 	@Override
+	public Optional<ItemUnitOfMeasureEntity> findItemUnitOfMeasureByItemId(Integer itemId) {
+		// TODO Auto-generated method stub
+		return itemUnitOfMeasureRepository.findByItemId(itemId);
+	}
+
+	@Override
 	public ItemUnitOfMeasureEntity updateItemUnitOfMeasure(ItemUnitOfMeasureEntity itemUnitOfMeasureEntity) {
 		// TODO Auto-generated method stub
 		return itemUnitOfMeasureRepository.save(itemUnitOfMeasureEntity);
