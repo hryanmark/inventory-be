@@ -2,6 +2,7 @@ package com.example.inventorybe.model;
 
 import java.math.BigInteger;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,21 +17,22 @@ public class TmpItemEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private BigInteger user_id;
+	@Column(name = "user_id")
+	private BigInteger userId;
 
 	public TmpItemEntity() {
 		super();
 	}
 
-	public TmpItemEntity(BigInteger user_id) {
+	public TmpItemEntity(BigInteger userId) {
 		super();
-		this.user_id = user_id;
+		this.userId = userId;
 	}
 
-	public TmpItemEntity(Long id, BigInteger user_id) {
+	public TmpItemEntity(Long id, BigInteger userId) {
 		super();
 		this.id = id;
-		this.user_id = user_id;
+		this.userId = userId;
 	}
 
 	public Long getId() {
@@ -41,17 +43,17 @@ public class TmpItemEntity {
 		this.id = id;
 	}
 
-	public BigInteger getUser_id() {
-		return user_id;
+	public BigInteger getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(BigInteger user_id) {
-		this.user_id = user_id;
+	public void setUserId(BigInteger userId) {
+		this.userId = userId;
 	}
 
 	@Override
 	public String toString() {
-		return "TmpItemEntity [id=" + id + ", user_id=" + user_id + "]";
+		return "TmpItemEntity [id=" + id + ", userId=" + userId + "]";
 	}
 
 }

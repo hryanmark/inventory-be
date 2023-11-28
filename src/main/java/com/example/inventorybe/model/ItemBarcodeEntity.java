@@ -1,5 +1,6 @@
 package com.example.inventorybe.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,31 +15,35 @@ public class ItemBarcodeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private Integer item_id;
+	@Column(name = "item_id")
+	private Integer itemId;
 	
-	private String item_uom; 
+	@Column(name = "item_uom")
+	private String itemUom; 
 	
+	@Column(name = "type")
 	private Integer type;
 	
+	@Column(name = "code")
 	private String code;
 
 	public ItemBarcodeEntity() {
 		super();
 	}
 
-	public ItemBarcodeEntity(Integer item_id, String item_uom, Integer type, String code) {
+	public ItemBarcodeEntity(Integer itemId, String itemUom, Integer type, String code) {
 		super();
-		this.item_id = item_id;
-		this.item_uom = item_uom;
+		this.itemId = itemId;
+		this.itemUom = itemUom;
 		this.type = type;
 		this.code = code;
 	}
 
-	public ItemBarcodeEntity(Long id, Integer item_id, String item_uom, Integer type, String code) {
+	public ItemBarcodeEntity(Long id, Integer itemId, String itemUom, Integer type, String code) {
 		super();
 		this.id = id;
-		this.item_id = item_id;
-		this.item_uom = item_uom;
+		this.itemId = itemId;
+		this.itemUom = itemUom;
 		this.type = type;
 		this.code = code;
 	}
@@ -51,20 +56,20 @@ public class ItemBarcodeEntity {
 		this.id = id;
 	}
 
-	public Integer getItem_id() {
-		return item_id;
+	public Integer getItemId() {
+		return itemId;
 	}
 
-	public void setItem_id(Integer item_id) {
-		this.item_id = item_id;
+	public void setItemId(Integer itemId) {
+		this.itemId = itemId;
 	}
 
-	public String getItem_uom() {
-		return item_uom;
+	public String getItemUom() {
+		return itemUom;
 	}
 
-	public void setItem_uom(String item_uom) {
-		this.item_uom = item_uom;
+	public void setItemUom(String itemUom) {
+		this.itemUom = itemUom;
 	}
 
 	public Integer getType() {
@@ -85,7 +90,7 @@ public class ItemBarcodeEntity {
 
 	@Override
 	public String toString() {
-		return "ItemBarcodeEntity [id=" + id + ", item_id=" + item_id + ", item_uom=" + item_uom + ", type=" + type
+		return "ItemBarcodeEntity [id=" + id + ", itemId=" + itemId + ", itemUom=" + itemUom + ", type=" + type
 				+ ", code=" + code + "]";
 	}
 	

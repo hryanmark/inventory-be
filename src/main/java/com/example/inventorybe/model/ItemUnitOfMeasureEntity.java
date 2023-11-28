@@ -18,26 +18,28 @@ public class ItemUnitOfMeasureEntity {
 	@Column(name = "item_id")
 	private Integer itemId;
 	
-	private Integer unit_of_measure_id;
+	@Column(name = "unit_of_measure_id")
+	private Integer unitOfMeasureId;
 	
+	@Column(name = "quantity")
 	private Integer quantity;
 
 	public ItemUnitOfMeasureEntity() {
 		super();
 	}
 
-	public ItemUnitOfMeasureEntity(Long id, Integer itemId, Integer unit_of_measure_id, Integer quantity) {
+	public ItemUnitOfMeasureEntity(Long id, Integer itemId, Integer unitOfMeasureId, Integer quantity) {
 		super();
 		this.id = id;
 		this.itemId = itemId;
-		this.unit_of_measure_id = unit_of_measure_id;
+		this.unitOfMeasureId = unitOfMeasureId;
 		this.quantity = quantity;
 	}
 
-	public ItemUnitOfMeasureEntity(Integer itemId, Integer unit_of_measure_id, Integer quantity) {
+	public ItemUnitOfMeasureEntity(Integer itemId, Integer unitOfMeasureId, Integer quantity) {
 		super();
 		this.itemId = itemId;
-		this.unit_of_measure_id = unit_of_measure_id;
+		this.unitOfMeasureId = unitOfMeasureId;
 		this.quantity = quantity;
 	}
 
@@ -57,12 +59,12 @@ public class ItemUnitOfMeasureEntity {
 		this.itemId = itemId;
 	}
 
-	public Integer getUnit_of_measure_id() {
-		return unit_of_measure_id;
+	public Integer getUnitOfMeasureId() {
+		return unitOfMeasureId;
 	}
 
-	public void setUnit_of_measure_id(Integer unit_of_measure_id) {
-		this.unit_of_measure_id = unit_of_measure_id;
+	public void setUnitOfMeasureId(Integer unitOfMeasureId) {
+		this.unitOfMeasureId = unitOfMeasureId;
 	}
 
 	public Integer getQuantity() {
@@ -75,7 +77,7 @@ public class ItemUnitOfMeasureEntity {
 
 	@Override
 	public String toString() {
-		return "ItemUnitOfMeasure [id=" + id + ", itemId=" + itemId + ", unit_of_measure_id=" + unit_of_measure_id
+		return "ItemUnitOfMeasure [id=" + id + ", itemId=" + itemId + ", unitOfMeasureId=" + unitOfMeasureId
 				+ ", quantity=" + quantity + "]";
 	}
 	

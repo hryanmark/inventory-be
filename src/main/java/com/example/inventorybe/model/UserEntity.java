@@ -1,5 +1,6 @@
 package com.example.inventorybe.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,44 +15,51 @@ public class UserEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "username")
 	private String username;
 	
+	@Column(name = "password")
 	private String password;
 	
+	@Column(name = "name")
 	private String name;
 	
-	private Long contact_no;
+	@Column(name = "contact_no")
+	private Long contactNo;
 	
+	@Column(name = "email")
 	private String email;
 	
+	@Column(name = "status")
 	private Integer status;
 	
+	@Column(name = "role")
 	private String role;
 
 	public UserEntity() {
 		super();
 	}
 
-	public UserEntity(Long id, String username, String password, String name, Long contact_no, String email,
+	public UserEntity(Long id, String username, String password, String name, Long contactNo, String email,
 			Integer status, String role) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.name = name;
-		this.contact_no = contact_no;
+		this.contactNo = contactNo;
 		this.email = email;
 		this.status = status;
 		this.role = role;
 	}
 
-	public UserEntity(String username, String password, String name, Long contact_no, String email, Integer status,
+	public UserEntity(String username, String password, String name, Long contactNo, String email, Integer status,
 			String role) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.name = name;
-		this.contact_no = contact_no;
+		this.contactNo = contactNo;
 		this.email = email;
 		this.status = status;
 		this.role = role;
@@ -89,12 +97,12 @@ public class UserEntity {
 		this.name = name;
 	}
 
-	public Long getContact_no() {
-		return contact_no;
+	public Long getContactNo() {
+		return contactNo;
 	}
 
-	public void setContact_no(Long contact_no) {
-		this.contact_no = contact_no;
+	public void setContactNo(Long contactNo) {
+		this.contactNo = contactNo;
 	}
 
 	public String getEmail() {
@@ -124,7 +132,7 @@ public class UserEntity {
 	@Override
 	public String toString() {
 		return "UserEntity [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name
-				+ ", contact_no=" + contact_no + ", email=" + email + ", status=" + status + ", role=" + role + "]";
+				+ ", contactNo=" + contactNo + ", email=" + email + ", status=" + status + ", role=" + role + "]";
 	}
 
 	

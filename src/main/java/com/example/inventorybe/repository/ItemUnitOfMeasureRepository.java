@@ -12,7 +12,5 @@ import com.example.inventorybe.model.ItemUnitOfMeasureEntity;
 @Repository
 public interface ItemUnitOfMeasureRepository extends JpaRepository<ItemUnitOfMeasureEntity, Long>{
 
-	// Custom method to find Item Unit Of Measure by item_id
-//	@Query("SELECT e FROM ItemUnitOfMeasureEntity e WHERE e.item_id = :item_id")
     Optional<ItemUnitOfMeasureEntity> findByItemId(Integer itemId);
 }

@@ -1,5 +1,6 @@
 package com.example.inventorybe.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,10 +15,13 @@ public class LocationEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "code")
 	private String code;
 	
+	@Column(name = "description")
 	private String description;
 	
+	@Column(name = "address")
 	private String address;
 
 	public LocationEntity() {

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,89 +20,105 @@ public class ItemEntity {
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private BigInteger brand_id;
+	@Column(name = "brand_id")
+	private BigInteger brandId;
 	
-	private BigInteger category_id;
+	@Column(name = "category_id")
+	private BigInteger categoryId;
 	
+	@Column(name = "title")
 	private String title;
 	
+	@Column(name = "description")
 	private String description;
 	
-	private String SKU;
+	@Column(name = "sku")
+	private String sku;
 	
-	private BigInteger base_uom;
+	@Column(name = "base_uom")
+	private BigInteger baseUom;
 	
-	private BigInteger sales_uom;
+	@Column(name = "sales_uom")
+	private BigInteger salesUom;
 	
-	private BigInteger puchase_uom;
+	@Column(name = "puchase_uom")
+	private BigInteger purchaseUom;
 	
-	private Double unit_cost;
+	@Column(name = "unit_cost")
+	private Double unitCost;
 	
-	private Integer minimum_stock_level;
+	@Column(name = "minimum_stock_level")
+	private Integer minimumStockLevel;
 	
-	private Integer maximum_stock_level;
+	@Column(name = "maximum_stock_level")
+	private Integer maximumStockLevel;
 	
+	@Column(name = "status")
 	private Integer status;
 	
-	private String created_by;
+	@Column(name = "created_by")
+	private String createdBy;
 	
-	private String updated_by;
+	@Column(name = "updated_by")
+	private String updatedBy;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-	private LocalDateTime created_at;
+	@Column(name = "created_at")
+	private LocalDateTime createdAt;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-	private LocalDateTime updated_at;
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt;
 
 	public ItemEntity() {
 		super();
 	}
 
-	public ItemEntity(Long id, BigInteger brand_id, BigInteger category_id, String title, String description,
-			String sKU, BigInteger base_uom, BigInteger sales_uom, BigInteger puchase_uom, Double unit_cost,
-			Integer minimum_stock_level, Integer maximum_stock_level, Integer status, String created_by,
-			String updated_by, LocalDateTime created_at, LocalDateTime updated_at) {
+	public ItemEntity(Long id, BigInteger brandId, BigInteger categoryId, String title, String description, String sku,
+			BigInteger baseUom, BigInteger salesUom, BigInteger purchaseUom, Double unitCost, Integer minimumStockLevel,
+			Integer maximumStockLevel, Integer status, String createdBy, String updatedBy, LocalDateTime createdAt,
+			LocalDateTime updatedAt) {
 		super();
 		this.id = id;
-		this.brand_id = brand_id;
-		this.category_id = category_id;
+		this.brandId = brandId;
+		this.categoryId = categoryId;
 		this.title = title;
 		this.description = description;
-		SKU = sKU;
-		this.base_uom = base_uom;
-		this.sales_uom = sales_uom;
-		this.puchase_uom = puchase_uom;
-		this.unit_cost = unit_cost;
-		this.minimum_stock_level = minimum_stock_level;
-		this.maximum_stock_level = maximum_stock_level;
+		this.sku = sku;
+		this.baseUom = baseUom;
+		this.salesUom = salesUom;
+		this.purchaseUom = purchaseUom;
+		this.unitCost = unitCost;
+		this.minimumStockLevel = minimumStockLevel;
+		this.maximumStockLevel = maximumStockLevel;
 		this.status = status;
-		this.created_by = created_by;
-		this.updated_by = updated_by;
-		this.created_at = created_at;
-		this.updated_at = updated_at;
+		this.createdBy = createdBy;
+		this.updatedBy = updatedBy;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
 	}
 
-	public ItemEntity(BigInteger brand_id, BigInteger category_id, String title, String description, String sKU,
-			BigInteger base_uom, BigInteger sales_uom, BigInteger puchase_uom, Double unit_cost,
-			Integer minimum_stock_level, Integer maximum_stock_level, Integer status, String created_by,
-			String updated_by, LocalDateTime created_at, LocalDateTime updated_at) {
+	public ItemEntity(BigInteger brandId, BigInteger categoryId, String title, String description, String sku,
+			BigInteger baseUom, BigInteger salesUom, BigInteger purchaseUom, Double unitCost, Integer minimumStockLevel,
+			Integer maximumStockLevel, Integer status, String createdBy, String updatedBy, LocalDateTime createdAt,
+			LocalDateTime updatedAt) {
 		super();
-		this.brand_id = brand_id;
-		this.category_id = category_id;
+		this.brandId = brandId;
+		this.categoryId = categoryId;
 		this.title = title;
 		this.description = description;
-		SKU = sKU;
-		this.base_uom = base_uom;
-		this.sales_uom = sales_uom;
-		this.puchase_uom = puchase_uom;
-		this.unit_cost = unit_cost;
-		this.minimum_stock_level = minimum_stock_level;
-		this.maximum_stock_level = maximum_stock_level;
+		this.sku = sku;
+		this.baseUom = baseUom;
+		this.salesUom = salesUom;
+		this.purchaseUom = purchaseUom;
+		this.unitCost = unitCost;
+		this.minimumStockLevel = minimumStockLevel;
+		this.maximumStockLevel = maximumStockLevel;
 		this.status = status;
-		this.created_by = created_by;
-		this.updated_by = updated_by;
-		this.created_at = created_at;
-		this.updated_at = updated_at;
+		this.createdBy = createdBy;
+		this.updatedBy = updatedBy;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
 	}
 
 	public Long getId() {
@@ -112,20 +129,20 @@ public class ItemEntity {
 		this.id = id;
 	}
 
-	public BigInteger getBrand_id() {
-		return brand_id;
+	public BigInteger getBrandId() {
+		return brandId;
 	}
 
-	public void setBrand_id(BigInteger brand_id) {
-		this.brand_id = brand_id;
+	public void setBrandId(BigInteger brandId) {
+		this.brandId = brandId;
 	}
 
-	public BigInteger getCategory_id() {
-		return category_id;
+	public BigInteger getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory_id(BigInteger category_id) {
-		this.category_id = category_id;
+	public void setCategoryId(BigInteger categoryId) {
+		this.categoryId = categoryId;
 	}
 
 	public String getTitle() {
@@ -144,60 +161,60 @@ public class ItemEntity {
 		this.description = description;
 	}
 
-	public String getSKU() {
-		return SKU;
+	public String getSku() {
+		return sku;
 	}
 
-	public void setSKU(String sKU) {
-		SKU = sKU;
+	public void setSku(String sku) {
+		this.sku = sku;
 	}
 
-	public BigInteger getBase_uom() {
-		return base_uom;
+	public BigInteger getBaseUom() {
+		return baseUom;
 	}
 
-	public void setBase_uom(BigInteger base_uom) {
-		this.base_uom = base_uom;
+	public void setBaseUom(BigInteger baseUom) {
+		this.baseUom = baseUom;
 	}
 
-	public BigInteger getSales_uom() {
-		return sales_uom;
+	public BigInteger getSalesUom() {
+		return salesUom;
 	}
 
-	public void setSales_uom(BigInteger sales_uom) {
-		this.sales_uom = sales_uom;
+	public void setSalesUom(BigInteger salesUom) {
+		this.salesUom = salesUom;
 	}
 
-	public BigInteger getPuchase_uom() {
-		return puchase_uom;
+	public BigInteger getPurchaseUom() {
+		return purchaseUom;
 	}
 
-	public void setPuchase_uom(BigInteger puchase_uom) {
-		this.puchase_uom = puchase_uom;
+	public void setPurchaseUom(BigInteger purchaseUom) {
+		this.purchaseUom = purchaseUom;
 	}
 
-	public Double getUnit_cost() {
-		return unit_cost;
+	public Double getUnitCost() {
+		return unitCost;
 	}
 
-	public void setUnit_cost(Double unit_cost) {
-		this.unit_cost = unit_cost;
+	public void setUnitCost(Double unitCost) {
+		this.unitCost = unitCost;
 	}
 
-	public Integer getMinimum_stock_level() {
-		return minimum_stock_level;
+	public Integer getMinimumStockLevel() {
+		return minimumStockLevel;
 	}
 
-	public void setMinimum_stock_level(Integer minimum_stock_level) {
-		this.minimum_stock_level = minimum_stock_level;
+	public void setMinimumStockLevel(Integer minimumStockLevel) {
+		this.minimumStockLevel = minimumStockLevel;
 	}
 
-	public Integer getMaximum_stock_level() {
-		return maximum_stock_level;
+	public Integer getMaximumStockLevel() {
+		return maximumStockLevel;
 	}
 
-	public void setMaximum_stock_level(Integer maximum_stock_level) {
-		this.maximum_stock_level = maximum_stock_level;
+	public void setMaximumStockLevel(Integer maximumStockLevel) {
+		this.maximumStockLevel = maximumStockLevel;
 	}
 
 	public Integer getStatus() {
@@ -208,46 +225,45 @@ public class ItemEntity {
 		this.status = status;
 	}
 
-	public String getCreated_by() {
-		return created_by;
+	public String getCreatedBy() {
+		return createdBy;
 	}
 
-	public void setCreated_by(String created_by) {
-		this.created_by = created_by;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 
-	public String getUpdated_by() {
-		return updated_by;
+	public String getUpdatedBy() {
+		return updatedBy;
 	}
 
-	public void setUpdated_by(String updated_by) {
-		this.updated_by = updated_by;
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
 	}
 
-	public LocalDateTime getCreated_at() {
-		return created_at;
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreated_at(LocalDateTime created_at) {
-		this.created_at = created_at;
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 
-	public LocalDateTime getUpdated_at() {
-		return updated_at;
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
 	}
 
-	public void setUpdated_at(LocalDateTime updated_at) {
-		this.updated_at = updated_at;
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 
 	@Override
 	public String toString() {
-		return "ItemEntity [id=" + id + ", brand_id=" + brand_id + ", category_id=" + category_id + ", title=" + title
-				+ ", description=" + description + ", SKU=" + SKU + ", base_uom=" + base_uom + ", sales_uom="
-				+ sales_uom + ", puchase_uom=" + puchase_uom + ", unit_cost=" + unit_cost + ", minimum_stock_level="
-				+ minimum_stock_level + ", maximum_stock_level=" + maximum_stock_level + ", status=" + status
-				+ ", created_by=" + created_by + ", updated_by=" + updated_by + ", created_at=" + created_at
-				+ ", updated_at=" + updated_at + "]";
+		return "ItemEntity [id=" + id + ", brandId=" + brandId + ", categoryId=" + categoryId + ", title=" + title
+				+ ", description=" + description + ", sku=" + sku + ", baseUom=" + baseUom + ", salesUom=" + salesUom
+				+ ", purchaseUom=" + purchaseUom + ", unitCost=" + unitCost + ", minimumStockLevel=" + minimumStockLevel
+				+ ", maximumStockLevel=" + maximumStockLevel + ", status=" + status + ", createdBy=" + createdBy
+				+ ", updatedBy=" + updatedBy + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
 	
 }
